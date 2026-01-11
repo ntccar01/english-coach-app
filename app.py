@@ -33,7 +33,7 @@ def get_ai_response(text, api_key):
     genai.configure(api_key=api_key)
     try:
         model = genai.GenerativeModel(
-            model_name="gemini-1.5-flash", # 使用 Flash 模型速度快且省錢
+            model_name="models/gemini-2.5-flash", # 使用 Flash 模型速度快且省錢
             generation_config={"response_mime_type": "application/json", "temperature": 0.7},
             system_instruction="""
             You are an enthusiastic English conversation coach.
@@ -135,4 +135,5 @@ if st.session_state.mistakes:
         data=csv,
         file_name='my_english_mistakes.csv',
         mime='text/csv',
+
     )
